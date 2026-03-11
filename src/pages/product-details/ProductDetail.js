@@ -12,8 +12,9 @@ import WebService from '../../util/webService';
 import constant from '../../util/constant';
 import { setLoader } from "../../redux/actions/loaderActions";
 import { multilanguage } from "redux-multilanguage";
-const ProductDetails = ({ strings, location, productID, currentLanguageCode, setLoader, defaultStore }) => {
+const ProductDetails = ({ strings, location, match, currentLanguageCode, setLoader, defaultStore }) => {
   const { pathname } = location;
+  const productID = match.params.id;
   const [productDetails, setProductDetails] = useState();
   const [productReview, setProductReview] = useState([]);
 
@@ -21,11 +22,11 @@ const ProductDetails = ({ strings, location, productID, currentLanguageCode, set
     getProductDetails();
     getReview();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [productID]);
 
   const getProductDetails = async () => {
     setLoader(true)
-    let action = constant.ACTION.PRODUCTS + productID + '?lang=' + currentLanguageCode + '&store=' + defaultStore;
+    let action = constant.ACTION.PRODUCT + productID + '?lang=' + currentLanguageCode + '&store=' + defaultStore;
     try {
       let response = await WebService.get(action);
       if (response) {
@@ -38,7 +39,7 @@ const ProductDetails = ({ strings, location, productID, currentLanguageCode, set
     }
   }
   const getReview = async () => {
-    let action = constant.ACTION.PRODUCTS + productID + '/reviews?store=' + defaultStore;
+    let action = constant.ACTION.PRODUCT + productID + '/reviews?store=' + defaultStore;
     try {
       let response = await WebService.get(action);
       if (response) {
@@ -103,14 +104,12 @@ const ProductDetails = ({ strings, location, productID, currentLanguageCode, set
 
 ProductDetails.propTypes = {
   location: PropTypes.object,
-  productID: PropTypes.number,
+  match: PropTypes.object,
   currentLanguageCode: PropTypes.string,
 };
 
 const mapStateToProps = (state, ownProps) => {
-  // const itemId = ownProps.match.params.id;
   return {
-    productID: state.productData.productid,
     currentLanguageCode: state.multilanguage.currentLanguageCode,
     defaultStore: state.merchantData.defaultStore
   };
