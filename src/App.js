@@ -22,6 +22,7 @@ const Home = lazy(() => import("./pages/home/Home"));
 
 // shop pages
 const Category = lazy(() => import("./pages/category/Category"));
+const Shop = lazy(() => import("./pages/shop/Shop"));
 
 // product pages
 const ProductDetail = lazy(() => import("./pages/product-details/ProductDetail"));
@@ -102,6 +103,10 @@ const App = (props) => {
 
 
                 {/* Shop pages */}
+                <Route
+                  path="/shop"
+                  component={Shop}
+                />
                 <Route
                   path="/category/:id"
                   component={Category}

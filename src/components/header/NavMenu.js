@@ -29,6 +29,11 @@ const NavMenu = ({ props, strings, menuWhiteClass, sidebarMenu, categories, cont
               {strings["Home"]}
             </Link>
           </li>
+          <li>
+            <Link to={"/shop"}>
+              {strings["Shop All"]}
+            </Link>
+          </li>
           {
             categories.map((item, index) => {
               return (
