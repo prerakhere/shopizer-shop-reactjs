@@ -157,5 +157,15 @@
   "Your rating": "Your rating",
   "Message": "Message",
   "Submit": "Submit",
-  "No items found in reviews": "No items found in reviews"
+  "No items found in reviews": "No items found in reviews",
+  "PRODUCT.NOTIFY_ME": "Notify Me When Available",
+  "PRODUCT.NOTIFY_DESCRIPTION": "Get notified when this product is back in stock.",
+  "PRODUCT.NOTIFY_EMAIL_PLACEHOLDER": "Enter your email",
+  "PRODUCT.NOTIFY_SUBSCRIBE": "Subscribe",
+  "PRODUCT.NOTIFY_SUCCESS": "You'll be notified when back in stock!",
+  "PRODUCT.NOTIFY_ERROR": "Failed to subscribe. Please try again.",
+  "PRODUCT.NOTIFY_INVALID_EMAIL": "Please enter a valid email",
+  "PRODUCT.NOTIFY_ALREADY_SUBSCRIBED": "You're already subscribed",
+  "Cancel": "Cancel",
+  "Loading": "Loading..."
 }

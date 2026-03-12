@@ -155,5 +155,15 @@
   "Your rating": "Votre note",
   "Message": "Un message",
   "Submit": "Soumettre",
-  "No items found in reviews": "Aucun article trouvé dans les avis"
+  "No items found in reviews": "Aucun article trouvé dans les avis",
+  "PRODUCT.NOTIFY_ME": "Me notifier quand disponible",
+  "PRODUCT.NOTIFY_DESCRIPTION": "Soyez averti lorsque ce produit est de nouveau en stock.",
+  "PRODUCT.NOTIFY_EMAIL_PLACEHOLDER": "Entrez votre email",
+  "PRODUCT.NOTIFY_SUBSCRIBE": "S'abonner",
+  "PRODUCT.NOTIFY_SUCCESS": "Vous serez averti lorsque le produit sera de nouveau en stock!",
+  "PRODUCT.NOTIFY_ERROR": "Échec de l'abonnement. Veuillez réessayer.",
+  "PRODUCT.NOTIFY_INVALID_EMAIL": "Veuillez entrer un email valide",
+  "PRODUCT.NOTIFY_ALREADY_SUBSCRIBED": "Vous êtes déjà abonné",
+  "Cancel": "Annuler",
+  "Loading": "Chargement..."
 }

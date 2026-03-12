@@ -5,6 +5,7 @@ import { useToasts } from "react-toast-notifications";
 import { connect } from "react-redux";
 // import { getDiscountPrice } from "../../helpers/product";
 import ProductModal from "./ProductModal";
+import NotifyMeModal from "./NotifyMeModal";
 import { setProductID } from "../../redux/actions/productActions";
 const ProductGridSingleTwo = ({
   product,
@@ -24,6 +25,7 @@ const ProductGridSingleTwo = ({
   userData
 }) => {
   const [modalShow, setModalShow] = useState(false);
+  const [notifyModalShow, setNotifyModalShow] = useState(false);
   const { addToast } = useToasts();
 
   // const discountedPrice = getDiscountPrice(product.price, product.discount);
@@ -87,6 +89,15 @@ const ProductGridSingleTwo = ({
                   // disabled={cartItem !== undefined && cartItem.quantity > 0}
                   title="Add to cart">
                   <i className="fa fa-shopping-cart"></i>{" "}
+                </button>
+              }
+              {
+                product.quantity === 0 &&
+                <button
+                  onClick={() => setNotifyModalShow(true)}
+                  className="active"
+                  title="Notify me when available">
+                  <i className="fa fa-bell"></i>
                 </button>
               }
 
@@ -172,6 +183,12 @@ const ProductGridSingleTwo = ({
         userData={userData}
         // addtocompare={addToCompare}
         addtoast={addToast}
+      />
+      <NotifyMeModal
+        show={notifyModalShow}
+        onHide={() => setNotifyModalShow(false)}
+        productId={product.id}
+        productName={product.description.name}
       />
     </Fragment >
   );
